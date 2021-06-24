@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 const request = require('request');
+const { autoUpdater } = require('electron-updater');
 
 // Disable warnings for:
 // - Disabled webSecurity
@@ -89,3 +90,7 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+app.on('ready', function () {
+  autoUpdater.checkForUpdatesAndNotify();
+ });

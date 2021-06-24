@@ -17,6 +17,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "electron-is-dev": "^2.0.0",
+    "electron-updater": "^4.3.9",
     "firebase": "^9.0.0-beta.2",
     "font-awesome": "^4.7.0",
     "is-electron": "^2.2.0",
@@ -47,6 +48,7 @@
     "react-start": "react-scripts start",
     "react-start-emulator": "cross-env REACT_APP_EMULATOR=true react-scripts start",
     "dist": "npm run build && electron-builder",
+    "publish": "electron-builder build -p always",
     "postinstall": "electron-builder install-app-deps"
   },
   "build": {

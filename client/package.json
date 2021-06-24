@@ -4,6 +4,10 @@
   "version": "0.2.0",
   "author": "Johnny Oshika",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webhookbuddy/webhookbuddy-updater.git"
+  },
   "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {

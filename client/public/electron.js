@@ -97,7 +97,6 @@ function sendStatusToWindow(text) {
   win.webContents.send('message', text);
 }
 
-console.log('autoUpdater', autoUpdater);
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 });
@@ -130,3 +129,7 @@ autoUpdater.on('update-downloaded', info => {
 app.on('ready', function () {
   autoUpdater.checkForUpdatesAndNotify();
 });
+
+setTimeout(function () {
+  sendStatusToWindow('Ping loger');
+}, 4000);

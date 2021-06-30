@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -27,7 +30,11 @@
     <title>Webhook Buddy</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript
+      >You need to enable JavaScript to run this app.</noscript
+    >
+    Current version: <span id="version">vX.Y.Z</span>
+    <div id="messages"></div>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +46,19 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      // Display the current version
+      let version = window.location.hash.substring(1);
+      document.getElementById('version').innerText = version;
+
+      // Listen for messages
+      const { ipcRenderer } = require('electron');
+      ipcRenderer.on('message', function (event, text) {
+        var container = document.getElementById('messages');
+        var message = document.createElement('div');
+        message.innerHTML = text;
+        container.appendChild(message);
+      });
+    </script>
   </body>
 </html>

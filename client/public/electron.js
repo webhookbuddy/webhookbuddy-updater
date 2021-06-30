@@ -94,7 +94,6 @@ app.on('activate', () => {
 });
 
 function sendStatusToWindow(text) {
-  log.info(text);
   win.webContents.send('message', text);
 }
 

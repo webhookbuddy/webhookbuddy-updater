@@ -52,7 +52,7 @@
     "react-start": "react-scripts start",
     "react-start-emulator": "cross-env REACT_APP_EMULATOR=true react-scripts start",
     "dist": "npm run build && electron-builder",
-    "publish": "electron-builder build -p always",
+    "publish": "npm run build && electron-builder build -p always",
     "postinstall": "electron-builder install-app-deps"
   },
   "build": {

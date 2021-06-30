@@ -1,7 +1,7 @@
 {
   "name": "webhookbuddy-client",
   "description": "Desktop client that captures and forwards webhooks to your local development server.",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "author": "Johnny Oshika",
   "private": true,
   "repository": {
@@ -52,7 +52,7 @@
     "react-start": "react-scripts start",
     "react-start-emulator": "cross-env REACT_APP_EMULATOR=true react-scripts start",
     "dist": "npm run build && electron-builder",
-    "publish": "electron-builder build -p always",
+    "publish": "npm run build && electron-builder build -p always",
     "postinstall": "electron-builder install-app-deps"
   },
   "build": {
